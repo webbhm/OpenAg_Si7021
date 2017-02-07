@@ -1,0 +1,16 @@
+{
+    "name": "OpenAg_Si7021",
+    "keywords": "OpenAg, Si7021",
+    "description": "OpenAg driver for the Si7021 humidity and temperature sensor",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/webbhm/OpenAg_Si7021.git"
+    },
+    "frameworks": "arduino",
+    "platforms": "*",
+    "dependencies": [
+        {
+            "name": "openag_module"
+        }
+    ]
+}
