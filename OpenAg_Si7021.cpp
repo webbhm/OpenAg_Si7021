@@ -35,12 +35,21 @@ OpenAg_Si7021::OpenAg_Si7021(void) {
 void OpenAg_Si7021::begin(){
   Wire.begin();
   reset();
-  readRegister8(SI7021_READRHT_REG_CMD);
+  if (readRegister8(SI7021_READRHT_REG_CMD) != 0x3A){
+     status_level = ERROR;
+     status_code = 1;
+     status_msg = "Unable to read register";
+     return;
+  }
 
   readSerialNumber();
 
   //Serial.println(sernum_a, HEX);
   //Serial.println(sernum_b, HEX);
+
+  status_level = OK;
+  status_code = CODE_OK;
+  status_msg = "";
 }
 
 //not sure is needed, but may be requried for code consistency by OpenAg

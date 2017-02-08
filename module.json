@@ -1,11 +1,16 @@
 {
     "header_file": "OpenAg_Si7021.h",
-    "class_name": "Barometer",
+    "class_name": "OpenAg_Si7021",
+    "description": "OpenAg driver for the Si7021 humidity and temperature sensor",
     "outputs": {
         "Humidity": {"type": "std_msgs/Float32"},
         "Temperature": {"type": "std_msgs/Float32"}
     },
     "dependencies": [
         {"type": "git", "url": "https://github.com/OpenAgInitiative/openag_firmware_module.git"}
-    ]
+    ],
+    "status_codes": {
+       "1": "Unable to find address for sensor",
+       "2": "Sensor not responding to query"
+     }
 }

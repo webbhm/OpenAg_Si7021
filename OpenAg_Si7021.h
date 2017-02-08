@@ -73,6 +73,10 @@ class OpenAg_Si7021 : public Module  //note: inheritance from OpenAg module
   void writeRegister8(uint8_t reg, uint8_t value);
 
   int8_t  _i2caddr;
+
+  //Status Codes
+  static const uint8_t CODE_COULDNT_FIND_ADDRESS = 1;
+  static const uint8_t CODE_NO_RESPONSE = 2;
 };
 
 /**************************************************************************/
