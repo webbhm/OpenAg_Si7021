@@ -77,6 +77,11 @@ class OpenAg_Si7021 : public Module  //note: inheritance from OpenAg module
   //Status Codes
   static const uint8_t CODE_COULDNT_FIND_ADDRESS = 1;
   static const uint8_t CODE_NO_RESPONSE = 2;
+
+  bool _send_humidity;
+  bool _send_temperature;
+  uint32_t _time_of_last_reading;
+  const static uint32_t _min_update_interval = 2000;
 };
 
 /**************************************************************************/

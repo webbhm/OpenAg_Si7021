@@ -52,19 +52,29 @@ void OpenAg_Si7021::begin(){
   status_msg = "";
 }
 
-//not sure is needed, but may be requried for code consistency by OpenAg
+//throttle data flow
 void OpenAg_Si7021::update(){
-   //
+   if (millis() - _time_of_last_reading > _min_update_interval) {
+      _time_of_last_reading = millis();
+      _send_humidity = true;
+      _send_temperature = true;
+      status_level = OK;
+      status_msg = "";
+   }
 }
 
 bool OpenAg_Si7021::get_Temperature(std_msgs::Float32 &msg){
    msg.data = readTemperature();
-   return true;
+   bool res = _send_temperature;
+   _send_temperature = false;
+   return res;
 }
 
 bool OpenAg_Si7021::get_Humidity(std_msgs::Float32 &msg){
    msg.data = readHumidity();
-   return true;
+    bool res = _send_humidity;
+   _send_humidity = false;
+   return res;
 }
 
 
