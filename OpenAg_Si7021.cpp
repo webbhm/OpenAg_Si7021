@@ -63,14 +63,14 @@ void OpenAg_Si7021::update(){
    }
 }
 
-bool OpenAg_Si7021::get_Temperature(std_msgs::Float32 &msg){
+bool OpenAg_Si7021::get_air_temperature(std_msgs::Float32 &msg){
    msg.data = readTemperature();
    bool res = _send_temperature;
    _send_temperature = false;
    return res;
 }
 
-bool OpenAg_Si7021::get_Humidity(std_msgs::Float32 &msg){
+bool OpenAg_Si7021::get_air_humidity(std_msgs::Float32 &msg){
    msg.data = readHumidity();
     bool res = _send_humidity;
    _send_humidity = false;

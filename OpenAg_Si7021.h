@@ -57,8 +57,8 @@ class OpenAg_Si7021 : public Module  //note: inheritance from OpenAg module
   OpenAg_Si7021(void);
   void begin();
   void update();
-  bool get_Temperature(std_msgs::Float32 &msg);
-  bool get_Humidity(std_msgs::Float32 &msg);
+  bool get_air_temperature(std_msgs::Float32 &msg);
+  bool get_air_humidity(std_msgs::Float32 &msg);
 
  private:
   float readTemperature(void);
