@@ -4,10 +4,6 @@
     "type": "Si7021",
     "environment": "environment_1",
     "_id": "Si7021_1",
-     "outputs": {
-        "Humidity": {"variable": "Humidity"},
-        "Temperature": {"variable": "Temperature"}
-      }     
      }
    ],
   "firmware_module_type": [
@@ -21,13 +17,12 @@
       "class_name": "OpenAg_Si7021",
       "description": "Driver for the Si7021 temperature and humidity sensor",
       "outputs": {
-        "Humidity": {"type": "std_msgs/Float32"},
-        "Temperature": {"type": "std_msgs/Float32"}
+        "air_humidity": {"type": "std_msgs/Float32"},
+        "air_temperature": {"type": "std_msgs/Float32"}
       },
       "dependencies": [
         {"type": "git", "url": "https://github.com/OpenAgInitiative/openag_firmware_module.git"}
       ],
-,
     "status_codes": {
        "1": "Unable to find address for sensor",
        "2": "Sensor not responding to query"
